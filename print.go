@@ -15,16 +15,26 @@ import (
 	"strings"
 )
 
-// Printable represents a sequence of digits that can be printed with
-// Print(), Fprint(), or Sprint().
+// Printable represents a sequence of digits between 0-9 with contiguous
+// positions that can be printed with Print(), Fprint(), or Sprint().
 type Printable interface {
+
+	// AllInRange returns the 0 based position and value of each digit in
+	// this Printable from position start up to but not including position
+	// end.
 	AllInRange(start, end int) iter.Seq2[int, int]
 }
 
-// Writeble represents a sequence of digits that can be printed with
-// Write(), Fwrite(), or Swrite().
+// Writable represents a sequence of digits between 0-9 with contiguous
+// positions that can be printed with Write(), Fwrite(), or Swrite().
 type Writable interface {
+
+	// All returns the 0 based position and value of each digit in this
+	// Writable from beginning to end.
 	All() iter.Seq2[int, int]
+
+	// Backward returns the 0 based position and value of each digit in this
+	// Writable from end to beginning.
 	Backward() iter.Seq2[int, int]
 }
 
