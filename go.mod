@@ -3,7 +3,7 @@ module github.com/keep94/numprint
 go 1.24.1
 
 require (
-	github.com/keep94/sqrt v0.1.3
+	github.com/keep94/sqrt v0.3.0
 	github.com/stretchr/testify v1.11.1
 )
 
